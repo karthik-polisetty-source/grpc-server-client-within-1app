@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grpc";
+option java_outer_classname = "UpiProto";
+
+service UpiService {
+    rpc CreateTask(CreateRequest) returns (CreateResponse);
+}
+message CreateRequest {
+    string name = 1;
+    string address = 2;
+}
+message CreateResponse {
+    int64 id = 1;
+    string name = 2;
+    string address = 3;
+    string contact=4;
+
+}
+message EmptyRequest {}
