@@ -28,7 +28,10 @@ public class UpiGrpcService extends UpiServiceGrpc.UpiServiceImplBase {
         upi.setAddress(request.getAddress());
         Upi create =upiRepo.save(upi);
 
-        CreateResponse response = CreateResponse.newBuilder().setName(request.getName()).setAddress(request.getAddress()).build();
+        CreateResponse response = CreateResponse.newBuilder()
+                .setName(create.getName())
+                .setAddress(create.getAddress())
+                .build();
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();

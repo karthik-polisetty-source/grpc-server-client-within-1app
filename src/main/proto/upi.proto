@@ -6,6 +6,9 @@ option java_outer_classname = "UpiProto";
 
 service UpiService {
     rpc CreateTask(CreateRequest) returns (CreateResponse);
+    rpc ClientSideStreming(stream CreateRequest) returns (CreateResponse);
+    rpc ServerSideStreming(CreateRequest) returns (stream CreateResponse);
+    rpc BiDirectionalStreming(stream CreateRequest) returns(stream CreateResponse);
 }
 message CreateRequest {
     string name = 1;

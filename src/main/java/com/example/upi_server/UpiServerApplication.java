@@ -11,10 +11,11 @@ public class UpiServerApplication {
 
 	public static void main(String[] args) throws InterruptedException{
 
-		ApplicationContext context =SpringApplication.run(UpiServerApplication.class, args);
-		UpiGrpcClient upiGrpcClient =context.getBean(UpiGrpcClient.class);
-		upiGrpcClient.createTask();
+//		ApplicationContext context =SpringApplication.run(UpiServerApplication.class, args);
+//		UpiGrpcClient upiGrpcClient =context.getBean(UpiGrpcClient.class);
+//		upiGrpcClient.createTask();
 
+		SpringApplication.run(UpiServerApplication.class, args);
 	}
 
 }

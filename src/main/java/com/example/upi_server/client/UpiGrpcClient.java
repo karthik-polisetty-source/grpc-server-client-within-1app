@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class UpiGrpcClient {
 
-public void createTask(){
-
+//public void createTask(){
+public static void main(String[] args)
+{
     ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost",9090)
             .usePlaintext().build();
 
