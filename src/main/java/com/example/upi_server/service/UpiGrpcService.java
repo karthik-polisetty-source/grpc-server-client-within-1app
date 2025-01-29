@@ -21,16 +21,17 @@ public class UpiGrpcService extends UpiServiceGrpc.UpiServiceImplBase {
     @Override
     public void createTask(CreateRequest request, StreamObserver<CreateResponse> responseObserver) {
 
-    System.out.println("Received CreateTask request with title: " + request.getName());
+    System.out.println("Received CreateTask request with title: " + request.getName()+","+request.getAddress());
 
         Upi upi =new Upi();
         upi.setName(request.getName());
         upi.setAddress(request.getAddress());
         Upi create =upiRepo.save(upi);
 
-        CreateResponse response = CreateResponse.newBuilder().setName(request.getName()).build();
+        CreateResponse response = CreateResponse.newBuilder().setName(request.getName()).setAddress(request.getAddress()).build();
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();
+
     }
 }

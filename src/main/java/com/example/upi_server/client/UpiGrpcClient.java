@@ -19,8 +19,10 @@ public void createTask(){
     UpiServiceGrpc.UpiServiceBlockingStub stub =UpiServiceGrpc.newBlockingStub(managedChannel);
 
     CreateRequest request = CreateRequest.newBuilder()
-            .setName("Task 1")
+           .setName("john").setAddress("goa")
             .build();
+
+
 
 
     CreateResponse response1 = stub.createTask(request);
